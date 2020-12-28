@@ -8,16 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public float StrafingForce = 500f;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
-
         rb.AddForce(0, 0, ForwardForce * Time.deltaTime);
 
         if (Input.GetKey("d"))
@@ -34,6 +27,5 @@ public class PlayerMovement : MonoBehaviour
         {
             FindObjectOfType<GameManager>().EndGame();
         }
-
     }
 }
