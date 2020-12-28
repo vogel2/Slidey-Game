@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public bool IsGameOver = false;
     public Text GameOverText;
+    public GameObject WinScreen;
 
     public void EndGame()
     {
@@ -28,6 +29,6 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-        GameOverText.text = "Level Complete";
+        WinScreen.SetActive(true);
     }
 }
