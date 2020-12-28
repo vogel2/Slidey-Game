@@ -9,7 +9,10 @@ public class PlayerCollision : MonoBehaviour
         if (colInfo.collider.tag == "Obstacle")
         {
             Debug.Log("We hit " + colInfo.collider.name);
+            FindObjectOfType<GameManager>().EndGame();
             movement.enabled = false;
+            
+
         }
     }
 }
