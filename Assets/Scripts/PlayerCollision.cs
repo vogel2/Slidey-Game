@@ -3,6 +3,7 @@
 public class PlayerCollision : MonoBehaviour
 {
     public PlayerMovement movement;
+    bool isHit = false;
         
     void OnCollisionEnter(Collision colInfo)
     {
@@ -10,10 +11,18 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("We hit " + colInfo.collider.name);
 
-            FindObjectOfType<GameManager>().EndGame();
+            isHit = true;
 
             movement.enabled = false;
         }
     }
 
+    void Update()
+    {
+        if(isHit == true)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+        
+    }
 }
