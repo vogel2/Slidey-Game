@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
         GameOverText.text = "Press Spacebar to Restart";
         if (Input.GetKey(KeyCode.Space))
         {
-            if (!IsGameOver)
+            if (IsGameOver == false)
             {
                 Debug.Log("Game Over!");
                 IsGameOver = true;
